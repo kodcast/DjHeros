@@ -30,10 +30,6 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
 
 1.  Clonez le projet ou téléchargez les fichiers sources :
     
-    bash
-    
-    Copy
-    
     git clone https://github.com/votre-utilisateur/djheros.git
     
 2.  Placez les fichiers sur votre serveur web (par exemple, dans le répertoire `htdocs` ou un répertoire accessible via un serveur local).
@@ -41,10 +37,6 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
 3.  Assurez-vous que le fichier `propositions.json` est présent dans le même répertoire que `index.php` et `validation.php`. Si ce fichier n'existe pas, il sera créé automatiquement.
     
 4.  Réglez les droits du fichier `propositions.json` pour permettre au serveur web de le lire et de l'écrire :
-    
-    bash
-    
-    Copy
     
     chown www-data:www-data propositions.json
     chmod 664 propositions.json
