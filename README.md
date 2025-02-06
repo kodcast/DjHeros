@@ -47,6 +47,7 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
     
     ```console
     chmod 664 propositions.json
+    
 ```    
 
 ----------
