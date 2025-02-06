@@ -43,7 +43,8 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
     ```console
     chown www-data:www-data propositions.json
 ```
-    
+
+    ```console
     chmod 664 propositions.json
 ```    
 
