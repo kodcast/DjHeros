@@ -88,8 +88,4 @@ Ce projet est sous licence **MIT**. Pour plus de détails, consultez le fichier 
 
 -   **K0d (Michaël David)**
 
-----------
 
-## Remerciements 🙏
-
-Un grand merci à toutes les personnes qui contribuent à ce projet ainsi qu'à la communauté open-source pour son soutien et ses idées.
