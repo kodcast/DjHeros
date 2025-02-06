@@ -40,15 +40,14 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
     
 4.  Réglez les droits du fichier `propositions.json` :
     
-    ```console
+    ```bash
     chown www-data:www-data propositions.json
     ```
      Permettre au serveur web de le lire et de l'écrire:
     
-    ```console
+    ```bash
     chmod 664 propositions.json
-    
-```    
+    ```   
 
 ----------
 
