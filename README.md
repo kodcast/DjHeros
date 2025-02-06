@@ -30,7 +30,9 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
 
 1.  Clonez le projet ou téléchargez les fichiers sources :
     
+    ```console
     git clone https://github.com/votre-utilisateur/djheros.git
+    ```
     
 2.  Placez les fichiers sur votre serveur web (par exemple, dans le répertoire `htdocs` ou un répertoire accessible via un serveur local).
     
