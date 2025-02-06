@@ -38,12 +38,13 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
     
 3.  Assurez-vous que le fichier `propositions.json` est présent dans le même répertoire que `index.php` et `validation.php`. Si ce fichier n'existe pas, il sera créé automatiquement.
     
-4.  Réglez les droits du fichier `propositions.json` pour permettre au serveur web de le lire et de l'écrire :
+4.  Réglez les droits du fichier `propositions.json` :
     
     ```console
     chown www-data:www-data propositions.json
-```
-
+    ```
+     Permettre au serveur web de le lire et de l'écrire:
+    
     ```console
     chmod 664 propositions.json
 ```    
