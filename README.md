@@ -31,7 +31,7 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
 1.  Clonez le projet ou téléchargez les fichiers sources :
     
     ```console
-    git clone https://github.com/votre-utilisateur/djheros.git
+    git clone https://github.com/kodcast/DjHeros.git
     ```
     
 2.  Placez les fichiers sur votre serveur web (par exemple, dans le répertoire `htdocs` ou un répertoire accessible via un serveur local).
@@ -40,9 +40,12 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
     
 4.  Réglez les droits du fichier `propositions.json` pour permettre au serveur web de le lire et de l'écrire :
     
+    ```console
     chown www-data:www-data propositions.json
+```
+```console
     chmod 664 propositions.json
-    
+```    
 
 ----------
 
