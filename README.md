@@ -79,7 +79,7 @@ Vous souhaitez contribuer à ce projet ? Voici comment faire :
 
 ## Licence 📜
 
-Ce projet est sous licence **MIT**. Pour plus de détails, consultez le fichier [LICENSE](https://chat.deepseek.com/a/chat/s/LICENSE).
+Ce projet est sous licence **MIT**. Pour plus de détails, consultez le fichier [LICENSE](https://fr.wikipedia.org/wiki/Licence_MIT).
 
 ----------
 
