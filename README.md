@@ -30,7 +30,7 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
 
 1.  Clonez le projet ou téléchargez les fichiers sources :
     
-    ```console
+    ```bash
     git clone https://github.com/kodcast/DjHeros.git
     ```
     
@@ -38,12 +38,12 @@ Pour exécuter cette application, assurez-vous d'avoir les éléments suivants :
     
 3.  Assurez-vous que le fichier `propositions.json` est présent dans le même répertoire que `index.php` et `validation.php`. Si ce fichier n'existe pas, il sera créé automatiquement.
     
-4.  Réglez les droits du fichier `propositions.json` :
+4.  Réglez les droits du fichier `propositions.json` pour ermettre au serveur web de le lire et de l'écrire: :
     
     ```bash
     chown www-data:www-data propositions.json
     ```
-     Permettre au serveur web de le lire et de l'écrire:
+     et
     
     ```bash
     chmod 664 propositions.json
