@@ -44,19 +44,19 @@ $proposals = loadProposals();
         <input type="submit" value="Proposer">
     </form>
     <ul>
-    <h2>Propositions en attente :</h2>
+    <h2>Propositions en attente ⏱️ :</h2>
     <form action="" method="post">
         
 
             <?php foreach ($proposals as $p) if ($p['status'] === 'pending') echo "<li>{$p['artiste']} - {$p['titre']}</li>"; ?>
     </ul>
     <ul>
-    <h2>Propositions Validées :</h2>
+    <h2>Propositions Validées ✅​ :</h2>
     
         <?php foreach ($proposals as $p) if ($p['status'] === 'validated') echo "<li>{$p['artiste']} - {$p['titre']}</li>"; ?>
     </ul>
     <ul>
-    <h2>Propositions Refusées :</h2>
+    <h2>Propositions Refusées ❌​ :</h2>
     
         <?php foreach ($proposals as $p) if ($p['status'] === 'rejected') echo "<li>{$p['artiste']} - {$p['titre']}</li>"; ?>
     </ul>
