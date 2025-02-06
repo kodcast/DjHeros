@@ -79,7 +79,7 @@ Vous souhaitez contribuer à ce projet ? Voici comment faire :
 
 ## Licence 📜
 
-Ce projet est sous licence **MIT**. Pour plus de détails, consultez le fichier [LICENSE](https://fr.wikipedia.org/wiki/Licence_MIT).
+Ce projet est sous licence **GPL-3.0**. Pour plus de détails, consultez le fichier [LICENSE](https://github.com/kodcast/DjHeros/commit/08911305ee43a7fcc27e7de139b74f3cd927bccc).
 
 ----------
 
