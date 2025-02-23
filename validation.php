@@ -16,7 +16,7 @@ function saveProposals($proposals) {
 // Gérer les actions d'acceptation, de refus et de suppression
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $proposals = loadProposals();
-    
+
     if (isset($_POST['accept'])) {
         $proposals[$_POST['accept']]['status'] = 'validated';
     } elseif (isset($_POST['reject'])) {
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         unset($proposals[$_POST['delete']]);
         $proposals = array_values($proposals); // Réindexer le tableau
     }
-    
+
     saveProposals($proposals);
     header('Location: validation.php');
     exit;
@@ -33,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $proposals = loadProposals();
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +47,7 @@ $proposals = loadProposals();
         
             <?php foreach ($proposals as $index => $p) if ($p['status'] === 'pending') { ?>
                 <li>
-                    <?php echo htmlspecialchars("{$p['artiste']} - {$p['titre']}"); ?>
+                    <?php echo htmlspecialchars("{$p['contrib']}: {$p['artiste']} - {$p['titre']}"); ?>
                     <button class="del2" type="submit" name="accept" value="<?php echo $index; ?>">Accepter</button>
                     <button class="del" type="submit" name="reject" value="<?php echo $index; ?>">Refuser</button>
                     <button class="del" type="submit" name="delete" value="<?php echo $index; ?>">Supprimer</button>
@@ -60,4 +59,3 @@ $proposals = loadProposals();
     <h2><a href="index.php">Retour à l'accueil</a></h2>
 </body>
 </html>
-
