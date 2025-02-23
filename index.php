@@ -32,27 +32,24 @@ $proposals = loadProposals();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>La Tambouille dont vous êtes le héros</title>
+    <title>DJ Heros</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <img src="logo.png" />
     <h1>Proposez votre musique</h1>
-    <p>Merci d'être précis dans les noms d'artistes et de titres, et de vérifier qu'un morceau n'est pas déjà dans la playlist avant de le poster.</p>
-    <H2>Fermé le temps de digérer</h2>
-    <!--<form action="" method="post">
+    <form action="" method="post">
         <input type="text" name="artiste" placeholder="Artiste" required><br>
         <input type="text" name="titre" placeholder="Titre" required><br>
         <input type="submit" value="Proposer">
-    </form>-->
+    </form>
     <ul>
-    <h2>Propositions en attente ⏱️​ :</h2>
+    <h2>Propositions en attente ⏱️ :</h2>
     <form action="" method="post">
         
 
-   
-                    <?php
-// Trier les propositions validées par ordre inverse (les plus récentes en premier)
+                               <?php
+// Trier les propositions en attente par ordre inverse (les plus récentes en premier)
     $validatedProposals = array_filter($proposals, function($p) {
     return $p['status'] === 'pending';
 });
@@ -66,7 +63,7 @@ $proposals = loadProposals();
     <ul>
     <h2>Propositions Validées ✅​ :</h2>
     
-        <?php
+                <?php
 // Trier les propositions validées par ordre inverse (les plus récentes en premier)
     $validatedProposals = array_filter($proposals, function($p) {
     return $p['status'] === 'validated';
@@ -81,10 +78,8 @@ $proposals = loadProposals();
     <ul>
     <h2>Propositions Refusées ❌​ :</h2>
     
-       
-        
-                <?php
-// Trier les propositions validées par ordre inverse (les plus récentes en premier)
+                        <?php
+// Trier les propositions refusées par ordre inverse (les plus récentes en premier)
     $validatedProposals = array_filter($proposals, function($p) {
     return $p['status'] === 'rejected';
 });
@@ -95,7 +90,8 @@ $proposals = loadProposals();
 }
 ?>
     </ul>
- <div class="footer">2025 🄯 by K0d</div>  
-    
+
+    <div class="footer">2025 🄯 by K0d</div>  
 </body>
 </html>
+
