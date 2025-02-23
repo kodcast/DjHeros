@@ -48,17 +48,47 @@ $proposals = loadProposals();
     <form action="" method="post">
         
 
-            <?php foreach ($proposals as $p) if ($p['status'] === 'pending') echo "<li>{$p['artiste']} - {$p['titre']}</li>"; ?>
+                               <?php
+// Trier les propositions en attente par ordre inverse (les plus récentes en premier)
+    $validatedProposals = array_filter($proposals, function($p) {
+    return $p['status'] === 'pending';
+});
+    $validatedProposals = array_reverse($validatedProposals); // Inverser l'ordre
+
+    foreach ($validatedProposals as $p) {
+    echo "<li>{$p['artiste']} - {$p['titre']}</li>";
+}
+?>
     </ul>
     <ul>
     <h2>Propositions Validées ✅​ :</h2>
     
-        <?php foreach ($proposals as $p) if ($p['status'] === 'validated') echo "<li>{$p['artiste']} - {$p['titre']}</li>"; ?>
+                <?php
+// Trier les propositions validées par ordre inverse (les plus récentes en premier)
+    $validatedProposals = array_filter($proposals, function($p) {
+    return $p['status'] === 'validated';
+});
+    $validatedProposals = array_reverse($validatedProposals); // Inverser l'ordre
+
+    foreach ($validatedProposals as $p) {
+    echo "<li>{$p['artiste']} - {$p['titre']}</li>";
+}
+?>
     </ul>
     <ul>
     <h2>Propositions Refusées ❌​ :</h2>
     
-        <?php foreach ($proposals as $p) if ($p['status'] === 'rejected') echo "<li>{$p['artiste']} - {$p['titre']}</li>"; ?>
+                        <?php
+// Trier les propositions refusées par ordre inverse (les plus récentes en premier)
+    $validatedProposals = array_filter($proposals, function($p) {
+    return $p['status'] === 'rejected';
+});
+    $validatedProposals = array_reverse($validatedProposals); // Inverser l'ordre
+
+    foreach ($validatedProposals as $p) {
+    echo "<li>{$p['artiste']} - {$p['titre']}</li>";
+}
+?>
     </ul>
 
     <div class="footer">2025 🄯 by K0d</div>  
