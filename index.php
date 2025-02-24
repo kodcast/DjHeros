@@ -54,6 +54,11 @@ $proposals = loadProposals();
     <h2>Propositions Validées ✅​ :</h2>
         <?php foreach ($proposals as $p) if ($p['status'] === 'validated') echo "<li>{$p['contrib']}: {$p['artiste']} - {$p['titre']}</li>"; ?>
     </ul>
+        <ul>
+        <h2>Propositions ajoutées à la playlist 👍​ :</h2>
+   <?php foreach ($proposals as $p) if ($p['status'] === 'searched') echo "<li>{$p['contrib']}: {$p['artiste']} - {$p['titre']}</li>"; ?>
+    
+    </ul>	    
     <ul>
     <h2>Propositions Refusées ❌​ :</h2>
         <?php foreach ($proposals as $p) if ($p['status'] === 'rejected') echo "<li>{$p['contrib']}: {$p['artiste']} - {$p['titre']}</li>"; ?>
