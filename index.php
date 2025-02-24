@@ -75,6 +75,22 @@ $proposals = loadProposals();
 }
 ?>
     </ul>
+
+    <ul>
+        <h2>Proposition ajoutée à la playlist 👍​ :</h2>
+                    <?php
+// Trier les propositions validées par ordre inverse (les plus récentes en premier)
+    $validatedProposals = array_filter($proposals, function($p) {
+    return $p['status'] === 'searched';
+});
+    $validatedProposals = array_reverse($validatedProposals); // Inverser l'ordre
+
+    foreach ($validatedProposals as $p) {
+    echo "<li>{$p['artiste']} - {$p['titre']}</li>";
+}
+?>
+    
+    </ul>
     <ul>
     <h2>Propositions Refusées ❌​ :</h2>
     

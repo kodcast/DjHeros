@@ -13,7 +13,7 @@ function saveProposals($proposals) {
     file_put_contents('propositions.json', json_encode($proposals, JSON_PRETTY_PRINT));
 }
 
-// Gérer les actions d'acceptation, de refus et de suppression
+// Gérer les actions d'acceptation, de refus, de suppression et de mise à jour du statut "searched"
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $proposals = loadProposals();
     
@@ -24,6 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (isset($_POST['delete'])) {
         unset($proposals[$_POST['delete']]);
         $proposals = array_values($proposals); // Réindexer le tableau
+    } elseif (isset($_POST['term']) && isset($_POST['status'])) {
+        // Mettre à jour le statut d'une proposition spécifique
+        foreach ($proposals as &$proposal) {
+            if ($proposal['artiste'] . ' ' . $proposal['titre'] === $_POST['term']) {
+                $proposal['status'] = $_POST['status'];
+                break;
+            }
+        }
     }
     
     saveProposals($proposals);
@@ -60,4 +68,3 @@ $proposals = loadProposals();
     <h2><a href="index.php">Retour à l'accueil</a></h2>
 </body>
 </html>
-
