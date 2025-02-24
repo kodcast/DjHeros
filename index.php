@@ -77,7 +77,7 @@ $proposals = loadProposals();
     </ul>
 
     <ul>
-        <h2>Proposition ajoutée à la playlist 👍​ :</h2>
+        <h2>Propositions ajoutées à la playlist 👍​ :</h2>
                     <?php
 // Trier les propositions validées par ordre inverse (les plus récentes en premier)
     $validatedProposals = array_filter($proposals, function($p) {
