@@ -47,6 +47,12 @@ $proposals = loadProposals();
 <head>
     <title>Validation des propositions</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+                <script>
+function searchYouTube(query) {
+    var url = "https://www.youtube.com/results?search_query=" + query;
+    window.open(url, "_blank");
+}
+</script>
 </head>
 <body>
 <img src="logo.png" />
@@ -60,6 +66,7 @@ $proposals = loadProposals();
                     <button class="del2" type="submit" name="accept" value="<?php echo $index; ?>">Accepter</button>
                     <button class="del" type="submit" name="reject" value="<?php echo $index; ?>">Refuser</button>
                     <button class="del" type="submit" name="delete" value="<?php echo $index; ?>">Supprimer</button>
+                    <button class="yt-search" type="button" onclick="searchYouTube('<?php echo urlencode($p['artiste'] . ' ' . $p['titre']); ?>')">🔍 YouTube</button>
                 </li>
             <?php } ?>
         </ul>
