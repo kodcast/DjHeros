@@ -12,6 +12,12 @@ h1, h2, p, a{
     color: white;
     
 }
+.yt-search
+{
+  font-size: 16px;
+  padding: 6px;
+  margin: 5px;
+}
 .del2[type=submit]
 {
   display: inline-block;
@@ -91,8 +97,8 @@ border-radius: 10px;
 list-style-type: none;
   
 
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
     color: white;
     text-align: left;
     padding-bottom:1.5%;
@@ -159,7 +165,12 @@ table
 font-size: 300%;
 width:100%;
 }
-
+    .yt-search
+{
+  font-size: 26px;
+  padding: 10px;
+  margin: 5px;
+}
 .del[type=submit]
 {
   display: inline-block;
