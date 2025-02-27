@@ -12,18 +12,38 @@ function loadProposals() {
 function saveProposals($proposals) {
     file_put_contents('propositions.json', json_encode($proposals, JSON_PRETTY_PRINT));
 }
-
+// Fonction pour vérifier les doublons
+function isDuplicate($proposals, $artiste, $titre) {
+    foreach ($proposals as $proposal) {
+        if (
+            strtolower(trim($proposal['artiste'])) === strtolower(trim($artiste)) &&
+            strtolower(trim($proposal['titre'])) === strtolower(trim($titre))
+        ) {
+            return true;
+        }
+    }
+    return false;
+}
+$error = ""; 
 // Ajouter une nouvelle proposition
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artiste'], $_POST['titre'])) {
     $proposals = loadProposals();
-    $proposals[] = [
-        'artiste' => $_POST['artiste'],
-        'titre' => $_POST['titre'],
-        'status' => 'pending'
-    ];
-    saveProposals($proposals);
-    header('Location: index.php');
-    exit;
+    $artiste = $_POST['artiste'];
+    $titre = $_POST['titre'];
+
+    // Vérifier les doublons avant d'ajouter
+    if (!isDuplicate($proposals, $artiste, $titre)) {
+        $proposals[] = [
+            'artiste' => $artiste,
+            'titre' => $titre,
+            'status' => 'pending'
+        ];
+        saveProposals($proposals);
+        header('Location: index.php');
+        exit;
+    } else {
+        $error = "Cette proposition existe déjà !";
+    }
 }
 
 $proposals = loadProposals();
@@ -42,6 +62,10 @@ $proposals = loadProposals();
         <input type="text" name="artiste" placeholder="Artiste" required><br>
         <input type="text" name="titre" placeholder="Titre" required><br>
         <input type="submit" value="Proposer">
+                        <!-- Affichage du message d'erreur sous le formulaire -->
+        <?php if (!empty($error)): ?>
+            <div class="error"><?php echo $error; ?></div>
+        <?php endif; ?>
     </form>
     <ul>
     <h2>Propositions en attente ⏱️ :</h2>
