@@ -12,6 +12,11 @@ h1, h2, p, a{
     color: white;
     
 }
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 1.5em;
+}
 .yt-search
 {
   font-size: 16px;
