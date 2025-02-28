@@ -13,6 +13,12 @@ function saveProposals($proposals) {
     file_put_contents('propositions.json', json_encode($proposals, JSON_PRETTY_PRINT));
 }
 
+// Fonction de normalisation : conversion en minuscules, suppression des espaces superflus
+function normalize($str) {
+    // Convertir en minuscules, supprimer les espaces de début/fin et réduire les espaces multiples à un seul
+    return preg_replace('/\s+/', ' ', trim(strtolower($str)));
+}
+
 // Gérer les actions d'acceptation, de refus, de suppression et de mise à jour du statut "searched"
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $proposals = loadProposals();
@@ -25,9 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         unset($proposals[$_POST['delete']]);
         $proposals = array_values($proposals); // Réindexer le tableau
     } elseif (isset($_POST['term']) && isset($_POST['status'])) {
-        // Mettre à jour le statut d'une proposition spécifique
+        // Normalisation du terme envoyé et de celui stocké dans chaque proposition
+        $termToUpdate = normalize($_POST['term']);
         foreach ($proposals as &$proposal) {
-            if ($proposal['artiste'] . ' ' . $proposal['titre'] === $_POST['term']) {
+            $proposalTerm = normalize($proposal['artiste'] . ' ' . $proposal['titre']);
+            if ($proposalTerm === $termToUpdate) {
                 $proposal['status'] = $_POST['status'];
                 break;
             }
